@@ -7,7 +7,7 @@ const Countries = function () {
 
 Countries.prototype.getData = function () {
 // Request Helper takes in a URL of the API to be queried.
-const requestHelper = new RequestHelper('https://restcountries.eu/rest/v2/all?fields=name');
+const requestHelper = new RequestHelper('https://restcountries.eu/rest/v2/all');
 
 requestHelper.get((data) => {
   PubSub.publish('Countries:countries-ready', data);
