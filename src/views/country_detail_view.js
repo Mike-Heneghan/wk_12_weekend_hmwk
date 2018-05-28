@@ -23,6 +23,18 @@ CountryDetailView.prototype.createDetailView = function () {
   });
   countryDetail.appendChild(countryLanguages);
 
+  const countryCurrencies = document.createElement('ul');
+  const currenciesArray = [];
+  this.country.currencies.forEach((currency) => {
+    currenciesArray.push(currency.name);
+  });
+  currenciesArray.forEach((currency) => {
+    const currencyItem = document.createElement('li');
+    currencyItem.textContent = currency;
+    countryCurrencies.appendChild(currencyItem);
+  });
+  countryDetail.appendChild(countryCurrencies);
+
   return countryDetail;
 
 };
